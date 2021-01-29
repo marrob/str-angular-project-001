@@ -16,6 +16,7 @@ export class ProductServiceService {
     return(list);
   }
 }
+
 const data= [{"id":213,"catId":526,"name":"Four Eyed Monsters","description":"unleash turn-key communities","image":"Potenti.tiff","price":3723,"stock":65,"featured":true,"active":false},
 {"id":206,"catId":496,"name":"Wholly Moses","description":"innovate bleeding-edge infrastructures","image":"Nec.gif","price":191,"stock":2,"featured":false,"active":false},
 {"id":141,"catId":841,"name":"Beware the Moon: Remembering 'An American Werewolf in London'","description":"synergize web-enabled infomediaries","image":"PedeMalesuada.tiff","price":8671,"stock":27,"featured":false,"active":true},
