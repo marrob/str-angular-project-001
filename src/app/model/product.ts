@@ -41,6 +41,11 @@ export class Product implements IProduct{
     featured: boolean;
     active: boolean;
 
+    constructor(prod: Partial<IProduct>){
+        Object.keys(prod).forEach(prop => {
+            this[prop] = prod[prop];
+        });
+    }
     // getId(): string{
     //     return(this.id);
     // };
