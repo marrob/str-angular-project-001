@@ -9,8 +9,8 @@ export class ProductServiceService {
   constructor(data:{}[]) {
     let list = [];
     for (let index = 0; index < data.length; index++) {
-      const properties = data[index];
-      const product = new Product(properties);
+      let properties = data[index];
+      let product = new Product(properties);
       list[index] = product;
     }
     return(list);
