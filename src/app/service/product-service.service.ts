@@ -5,7 +5,7 @@ import { Product } from '../model/Product';
   providedIn: 'root'
 })
 export class ProductServiceService {
-
+/*
   constructor(data:{}[]) {
     let list = [];
     for (let index = 0; index < data.length; index++) {
@@ -15,9 +15,12 @@ export class ProductServiceService {
     }
     return(list);
   }
-}
-
-const data= [{"id":213,"catId":526,"name":"Four Eyed Monsters","description":"unleash turn-key communities","image":"Potenti.tiff","price":3723,"stock":65,"featured":true,"active":false},
+*/
+//}
+constructor() { }
+/*const data*/ list: Product[] = [
+{id:213,catId:526,name:"Four Eyed Monsters",description:"unleash turn-key communities",image:"Potenti.tiff",price:3723,stock:65,featured:true,active:false},
+/*
 {"id":206,"catId":496,"name":"Wholly Moses","description":"innovate bleeding-edge infrastructures","image":"Nec.gif","price":191,"stock":2,"featured":false,"active":false},
 {"id":141,"catId":841,"name":"Beware the Moon: Remembering 'An American Werewolf in London'","description":"synergize web-enabled infomediaries","image":"PedeMalesuada.tiff","price":8671,"stock":27,"featured":false,"active":true},
 {"id":175,"catId":776,"name":"Thing with Two Heads, The","description":"reintermediate proactive paradigms","image":"Amet.tiff","price":5901,"stock":2,"featured":false,"active":true},
@@ -116,6 +119,9 @@ const data= [{"id":213,"catId":526,"name":"Four Eyed Monsters","description":"un
 {"id":665,"catId":243,"name":"Hud","description":"monetize dynamic communities","image":"LaoreetUtRhoncus.tiff","price":2184,"stock":93,"featured":true,"active":false},
 {"id":799,"catId":684,"name":"Club Dread","description":"reinvent one-to-one schemas","image":"VestibulumAcEst.png","price":2088,"stock":89,"featured":false,"active":false},
 {"id":185,"catId":340,"name":"As it is in Heaven (Så som i himmelen)","description":"embrace clicks-and-mortar e-commerce","image":"InTempor.jpeg","price":7326,"stock":33,"featured":true,"active":true},
-{"id":604,"catId":670,"name":"It Happened at the World's Fair","description":"enhance robust e-markets","image":"AcEst.gif","price":8308,"stock":94,"featured":false,"active":true}];
+{"id":604,"catId":670,"name":"It Happened at the World's Fair","description":"enhance robust e-markets","image":"AcEst.gif","price":8308,"stock":94,"featured":false,"active":true}
+*/
+];
 
-const list = new ProductServiceService(data);
+}
+//const list = new ProductServiceService(data);
