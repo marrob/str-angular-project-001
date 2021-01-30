@@ -1,22 +1,60 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductServiceService } from 'src/app/service/product-service.service';
-import { Product } from 'src/app/model/Product';
+import { Product } from '../../model/product';
+import { ProductService} from '../../service/product.service';
+import { CategoryService} from '../../service/category.service';
+import { Category } from 'src/app/model/category';
+//import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
-  selector: 'app-cat01',
-  templateUrl: './cat01.component.html',
-  styleUrls: ['./cat01.component.scss']
+    selector: 'app-cat01',
+    templateUrl: './cat01.component.html',
+    styleUrls: ['./cat01.component.scss']
 })
 export class Cat01Component implements OnInit {
 
-  //productList: Product[] = this.productServiceService.list;
-  productList: Product[] = [{id:213,catId:526,name:"Four Eyed Monsters",description:"unleash turn-key communities",image:"Potenti.tiff",price:3723,stock:65,featured:true,active:false}];
+    constructor(
+        private productService: ProductService,
+        private categoryService:CategoryService,
+     //   private route: ActivatedRoute,
+    ) { }
+    
+    products: Product[] = this.productService.list;
+    categories: Category[] = this.categoryService.list;
 
-  constructor(
-    private productServiceService: ProductServiceService, 
-  ) { }
+    /**
+     * @var catName {Product[]} -  Ezt Hogyan tudom megszerezni? 
+     */
+    catName: string = this.categories[0].name;
 
-  ngOnInit(): void {
-  }
+    /**
+     * @var feturedProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
+     */
+    feturedProducts: Product[] = [];
 
+    
+    /**
+     * @var feturedProducts {Product[]} -  A kategóriára leszürt könyvek listája
+     */
+    filteredProducts: Product[] = [];
+
+    
+    name:string = "";
+
+    ngOnInit(): void {
+        /*
+        this.route.queryParams.subscribe(params => {
+            this.name = params['name'];
+          });
+        */
+        let currentCatId = this.categories.filter((item => item.name == this.catName ))[0].id;
+        
+        this.filteredProducts = this.products.filter(item => item.catId == currentCatId);
+        
+        let onlyFeatured = this.products.filter(item => item.featured == true && item.catId == currentCatId);
+        this.feturedProducts = [];
+        for (let i = 0; i < 5; i++) {
+            const index = Math.floor(Math.random() * onlyFeatured.length);
+            this.feturedProducts.push(onlyFeatured[index]);
+        }
+    }
 }

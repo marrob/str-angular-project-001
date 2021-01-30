@@ -9,6 +9,7 @@ import { Cat02Component } from './page/cat02/cat02.component';
 import { HomeComponent } from './page/home/home.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ProductListComponent } from './common/product-list/product-list.component';
+import { Cat03Component } from './page/cat03/cat03.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductListComponent } from './common/product-list/product-list.compone
     Cat02Component,
     HomeComponent,
     FilterPipe,
-    ProductListComponent
+    ProductListComponent,
+    Cat03Component
   ],
   imports: [
     BrowserModule,
