@@ -9,7 +9,7 @@ import { Product } from 'src/app/model/product';
 export class ProductListComponent implements OnInit {
   phrase: string = '';
 
-  @Input() products: any[] = Array.from(Array(50).keys()).map((item,idx) => ({name: String(idx+1)}));
+  @Input() products: Product[] = [];
   //test_products: any[] = Array.from(Array(50).keys()).map((item,idx) => ({name: String(idx+1)}));
 
   constructor() { }
