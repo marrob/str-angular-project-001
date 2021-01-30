@@ -1,0 +1,8 @@
+div [class*="col-"] {
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    background: radial-gradient(ellipse at center, #ff6600 0%,#ce3400 100%);
+    border: 3px solid #fff;
+    color: #000;
+}
