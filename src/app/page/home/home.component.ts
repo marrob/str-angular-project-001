@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit {
         ) { }
 
     /**
-     * @var feturedProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
+     * @var featuredProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
      */
-    feturedProducts: Product[] = [];
+    featuredProducts: Product[] = [];
 
     /**
     * @var promotionProducts {Product[]} - 5db termék - akciós termék sor.
@@ -33,10 +33,10 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
 
         let onlyFeatured = this.products.filter(item => item.featured == true);
-        this.feturedProducts = [];
+        this.featuredProducts = [];
         for (let i = 0; i < 5; i++) {
             const index = Math.floor(Math.random() * onlyFeatured.length);
-            this.feturedProducts.push(onlyFeatured[index]);
+            this.featuredProducts.push(onlyFeatured[index]);
         }
         this.promotionProducts = [];
         for (let i = 0; i < 5; i++) {
