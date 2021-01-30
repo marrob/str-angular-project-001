@@ -19,8 +19,8 @@ import { ProductPagerComponent } from './common/product-pager/product-pager.comp
     Cat02Component,
     HomeComponent,
     Cat03Component,
-    ProductCardComponent,
-    ProductPagerComponent
+    ProductPagerComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
