@@ -15,8 +15,9 @@ export class ConfigService {
 
   menuItems: IMenuItem[] = [
     {text: 'Home', link: '/', icon: 'home'},
-    {text: 'Category01', link: '/cat01'},
-    {text: 'Category02', link: '/cat02'},
+    {text: 'Gyerek könyvek', link: '/cat01'},
+    {text: 'Informatika', link: '/cat02'},
+    {text: 'Pedagógia és pszichológia', link: '/cat03'},
   ];
 
   constructor() { }
