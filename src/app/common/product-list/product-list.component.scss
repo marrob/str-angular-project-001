@@ -6,3 +6,10 @@ div [class*="col-"] {
     border: 3px solid #fff;
     color: #000;
 }
+
+.row div.search {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0;
+}

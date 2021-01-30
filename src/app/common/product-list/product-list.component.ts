@@ -7,13 +7,17 @@ import { Product } from 'src/app/model/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  phrase: string = '';
 
   @Input() products: Product[] = [];
-  @Input() tests: number[] = Array.from(Array(50).keys()).map((item,idx) => idx+1);
+  @Input() test_products: any[] = Array.from(Array(50).keys()).map((item,idx) => ({name: idx+1}));
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onChangePhrase(event: Event):void {
+    this.phrase = (event.target as HTMLInputElement).value;
+  }
 }
