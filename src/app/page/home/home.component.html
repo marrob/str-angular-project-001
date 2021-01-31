@@ -1,1 +1,51 @@
-<p>home works!</p>
+<!--
+    Amint látjátok, a fő komponenseket már elkészítettem és a menüt is beállítottam.
+- Ez a főoldala a webshopnak.
+- Jelenjen meg egy kiemelt termék sor az oldal tetején.  
+> 5 kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
+> Jelenjen meg egy akciós termék sor a kiemelt termékek alatt, ide bármilyen random termék 
+kerülhet, szintén 5 darab legyen.  
+-->
+
+<div class="container-fluid mt-3 bg-light">
+    <div class="row ">
+        <div class="col-12">
+            <p class="h1 text-center"> Kiemelt könyveink </p>
+        </div>
+    </div>
+    <!-- csabadoki komponense-->
+    <app-product-pager [products]="featuredProducts"></app-product-pager>
+
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <p class="h1"> Akciós könyveink </p>
+        </div>
+    </div>
+    <!-- csabadoki komponense-->
+    <app-product-pager [products]="promotionProducts"></app-product-pager>
+</div>
+
+<footer class="text-white text-center text-md-left bg-primary mt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center">
+                <h3>Navigáció</h3>
+                <nav class="nav">
+                    <a href="/src/app/page/home/home.component.html">Főoldal</a>
+                </nav>
+            </div>
+
+            <div class="col-md-4 d-flex align-items-center">
+                <h3>Elérhetőségek</h3>
+
+            </div>
+            <div class="col-md-4 text-right">
+                <address>
+                    panCSERKÓdolók Kft. <br>
+                    Soha meg nem találod utca 26.
+                </address>
+
+            </div>
+        </div>
+    </div>
+</footer>

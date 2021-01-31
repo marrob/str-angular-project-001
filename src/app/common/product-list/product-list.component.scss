@@ -1,0 +1,19 @@
+div1 [class*="col-"] {
+    text-align: center;
+    padding: .5rem;
+    font-size: 1.5rem;
+    background: radial-gradient(ellipse at center, #ff6600 0%,#ce3400 100%);
+    border: 3px solid #fff;
+    color: #000;
+}
+
+.row div.search {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0;
+}
+.search label {
+    margin: 0 .3rem;
+    color: #fff;
+}

@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="search col-3 d-flex flex-row align-items-center mx-3 mb-1">
+                <label for="search">Név: </label>
+                <input id="search" (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search">
+        </div>
+    </div>
+    <div class="row">
+        <ng-container *ngFor="let product of products | filter:phrase:'name'; let _i = index">
+            <div [ngClass]="(_i % 5) == 0? 'col-sm-12 col-md-6 col-lg-2 offset-0 offset-lg-1 my-2': 'col-sm-12 col-md-6 col-lg-2 offset-0 my-2'">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        </ng-container>
+    </div>
+</div>
