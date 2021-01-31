@@ -6,12 +6,12 @@ import { Product } from '../model/Product';
 })
 export class ProductService {
     list: Product[] = [
-        { id: 0, name: "Ulrich Tietze -Christoph Schenk", description: "Cím: Analóg és digitális áramkörök, Év: 1981, Kiadó: Műszaki Könyvkiadó", catId: 10, image:"assets/img/termesszettudomany-villamosmernok/biliczsandor-amatematikavillamosmernokialkalmazasairolpeldakonkeresztul.jpg", price: 10, stock: 5, featured: false, active: true },
-        { id: 1, name: "Bálint Ágnes", description: "Cím: Szeleburdi család, Év: 1968, Kiadó: Móra", catId: 1, image: "assets/img/gyerek/balintagnes-szeleburdicsalad.jpg", price: 10, stock: 5, featured: false, active: true },
+        { id: 0, name: "Ulrich Tietze -Christoph Schenk", description: "Cím: Analóg és digitális áramkörök, Év: 1981, Kiadó: Műszaki Könyvkiadó", catId: 10, image:"assets/img/termeszettudomany-villamosmernok/ulrichtieztechristophschenk-analogesdigitalisaramkorok.jpg", price: 10, stock: 5, featured: false, active: true },
+        { id: 1, name: "Bálint Ágnes", description: "Cím: Szeleburdi család, Év: 1968, Kiadó: Móra", catId: 1, image: "assets/img/gyerek/balintagnes-szeleburdicsalad.jpg", price: 10, stock: 5, featured: true, active: true },
         { id: 2, name: "Benedek Elek", description: "Cím: Összes meséi III-IV., Év: 2007, Kiadó: Szukits Kiadó", catId: 1, image: "assets/img/gyerek/benedekelek-osszesmesei.jpg", price: 10, stock: 5, featured: false, active: true },
-        { id: 3, name: "Fekete István", description: "Cím: Vuk, Év: 2009, Kiadó: Móra", catId: 1, image: "assets/img/gyerek/fekete-istvan-vuk.jpg", price: 10, stock: 5, featured: false, active: true },
+        { id: 3, name: "Fekete István", description: "Cím: Vuk, Év: 2009, Kiadó: Móra", catId: 1, image: "assets/img/gyerek/fekete-istvan-vuk.jpg", price: 10, stock: 5, featured: true, active: true },
         { id: 4, name: "Lázár Ervin", description: "Cím: A kisfiú meg az oroszlánok, Év: 1999, Kiadó: Osiris Kiadó", catId: 1, image: "assets/img/gyerek/lazarervin-akisfiumegazoroszlanok.jpg", price: 10, stock: 5, featured: false, active: true },
-        { id: 5, name: "Móra Ferenc", description: "Cím: Sétálni megy Panka, Év: 2013, Kiadó: Móra", catId: 1, image: "assets/img/gyerek/moraferenc-setalnimegypanka.jpg", price: 10, stock: 5, featured: false, active: true },
+        { id: 5, name: "Móra Ferenc", description: "Cím: Sétálni megy Panka, Év: 2013, Kiadó: Móra", catId: 1, image: "assets/img/gyerek/moraferenc-setalnimegypanka.jpg", price: 10, stock: 5, featured: true, active: true },
         { id: 6, name: "Iványi Antal", description: "Cím: Informatikai algoritmusok I., Év: 2004, Kiadó: ELTE Eötvös Kiadó", catId: 2, image: "assets/img/informatika/informatikaialgoritmusokI.jpg", price: 10, stock: 5, featured: true, active: true },
         { id: 7, name: "Iványi Antal", description: "Cím: Informatikai algoritmusok II., Év: 2004, Kiadó: ELTE Eötvös Kiadó", catId: 2, image: "assets/img/informatika/informatikaialgoritmusokII.jpg", price: 10, stock: 5, featured: false, active: true },
         { id: 8, name: "Jakab Zsolt", description: "Cím: Készíts te is játékprogramot!, Év: 2018, Kiadó: Saxum", catId: 2, image: "assets/img/informatika/jakabzsolt-keszitsteisjatekprogramot.jpg", price: 10, stock: 5, featured: true, active: true },

@@ -12,49 +12,51 @@ import { Category } from 'src/app/model/category';
 })
 export class Cat01Component implements OnInit {
 
+    products: Product[] = this.productService.list;
+    categories: Category[] = this.categoryService.list;
+
     constructor(
         private productService: ProductService,
         private categoryService:CategoryService,
      //   private route: ActivatedRoute,
     ) { }
-    
-    products: Product[] = this.productService.list;
-    categories: Category[] = this.categoryService.list;
 
     /**
      * @var catName {Product[]} -  Ezt Hogyan tudom megszerezni? 
      */
     catName: string = this.categories[0].name;
+    catId: number = this.categories[0].id;
 
     /**
-     * @var feturedProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
+     * @var filteredProducts {Product[]} -  A kategóriára leszürt könyvek listája
      */
-    feturedProducts: Product[] = [];
+    filteredProducts: Product[] = this.productService.list.filter(item => item.catId===this.catId);
 
-    
     /**
-     * @var feturedProducts {Product[]} -  A kategóriára leszürt könyvek listája
+     * @var featuredProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
      */
-    filteredProducts: Product[] = this.productService.list.filter(item => item.name===this.catName);
-
+    featuredProducts: Product[] = this.filteredProducts.filter(item => item.featured)
+                                                        .sort( () => 0.5 - Math.random())
+                                                        .slice(0, 5);
     
-    name:string = "";
+    name: string = "";
 
     ngOnInit(): void {
         /*
         this.route.queryParams.subscribe(params => {
             this.name = params['name'];
           });
-        */
+        
         let currentCatId = this.categories.filter((item => item.name == this.catName ))[0].id;
         
         this.filteredProducts = this.products.filter(item => item.catId == currentCatId);
         
         let onlyFeatured = this.products.filter(item => item.featured == true && item.catId == currentCatId);
-        this.feturedProducts = [];
+        this.featuredProducts = [];
         for (let i = 0; i < 5; i++) {
             const index = Math.floor(Math.random() * onlyFeatured.length);
-            this.feturedProducts.push(onlyFeatured[index]);
+            this.featuredProducts.push(onlyFeatured[index]);
         }
+        */
     }
 }
