@@ -1,7 +1,9 @@
-<div class="card h-100 d-inline-block" >
+<div class="card h-100 d-inline-block"  >
     <img [src] ="product.image" class="card-img-top" alt="...">
     <div class="card-body ">
         <h5 class="card-title"> {{product.name}} </h5>
-        <p class="card-text"> Leírás: {{product.description}} </p>
+        <p class="card-text"> {{product.description}} </p>
+        <p class="card-text"> Ár: {{product.price}} Ft</p>
+        <p class="card-text"> Elérhető: {{product.stock}} példány</p>
     </div>
 </div>
