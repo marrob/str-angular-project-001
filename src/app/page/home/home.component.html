@@ -14,7 +14,7 @@ kerülhet, szintén 5 darab legyen.
         </div>
     </div>
     <!-- csabadoki komponense-->
-      <app-product-pager [products]="featuredProducts"></app-product-pager>
+    <app-product-pager [products]="featuredProducts"></app-product-pager>
 
     <div class="row mt-4">
         <div class="col-12 text-center">
@@ -25,30 +25,27 @@ kerülhet, szintén 5 darab legyen.
     <app-product-pager [products]="promotionProducts"></app-product-pager>
 </div>
 
-<footer class="text-white text-center text-md-left bg-primary">
-    <div class="container">
+<footer class="text-white text-center text-md-left bg-primary mt-3">
+    <div class="container-fluid">
         <div class="row">
-        <div class="col-md-4">
-            <h3>Navigáció</h3>
-            <nav class="nav">
-                <a href="/src/app/page/home/home.component.html">Főoldal</a>
-                <a href="/src/app/page/home/home.component.html">Főoldal</a>
-                <a href="/src/app/page/home/home.component.html">Főoldal</a>
-            </nav>
-        </div>
+            <div class="col-md-4 d-flex align-items-center">
+                <h3>Navigáció</h3>
+                <nav class="nav">
+                    <a href="/src/app/page/home/home.component.html">Főoldal</a>
+                </nav>
+            </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-center">
                 <h3>Elérhetőségek</h3>
-        
+
             </div>
             <div class="col-md-4 text-right">
                 <address>
                     panCSERKÓdolók Kft. <br>
-                    Soha meg nem találod utca 26. 
+                    Soha meg nem találod utca 26.
                 </address>
-             
+
             </div>
         </div>
     </div>
-
 </footer>
