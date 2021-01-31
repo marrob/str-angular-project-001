@@ -3,7 +3,6 @@ import { Product } from '../../model/product';
 import { ProductService} from '../../service/product.service';
 import { CategoryService} from '../../service/category.service';
 import { Category } from 'src/app/model/category';
-//import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
     selector: 'app-cat01',
@@ -15,8 +14,7 @@ export class Cat01Component implements OnInit {
     constructor(
         private productService: ProductService,
         private categoryService:CategoryService,
-     //   private route: ActivatedRoute,
-    ) { }
+     ) { }
     
     products: Product[] = this.productService.list;
     categories: Category[] = this.categoryService.list;
@@ -41,18 +39,13 @@ export class Cat01Component implements OnInit {
     name:string = "";
 
     ngOnInit(): void {
-        /*
-        this.route.queryParams.subscribe(params => {
-            this.name = params['name'];
-          });
-        */
-        let currentCatId = this.categories.filter((item => item.name == this.catName ))[0].id;
+        let currentCatId = this.categories[0].id;
         
         this.filteredProducts = this.products.filter(item => item.catId == currentCatId);
         
 
-        this.featuredProducts = this.filteredProducts.filter(product => product.featured && product.catId == currentCatId);
-        this.featuredProducts.sort(() => 0.5 - Math.random());
-        this.featuredProducts = this.featuredProducts.slice(0, 5);
+        this.featuredProducts = this.filteredProducts.filter(product => product.featured)
+                                                    .sort(() => 0.5 - Math.random())
+                                                    .slice(0, 5);
     }
 }
