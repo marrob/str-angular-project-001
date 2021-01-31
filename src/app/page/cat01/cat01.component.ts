@@ -35,7 +35,7 @@ export class Cat01Component implements OnInit {
     /**
      * @var filteredProducts {Product[]} -  A kategóriára leszürt könyvek listája
      */
-    filteredProducts: Product[] = [];
+    filteredProducts: Product[] = this.productService.list.filter(item => item.name===this.catName);
 
     
     name:string = "";
