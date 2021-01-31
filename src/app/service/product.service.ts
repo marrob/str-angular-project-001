@@ -6,7 +6,7 @@ import { Product } from '../model/Product';
 })
 export class ProductService {
     list: Product[] = [
-        { id: 0, name: "Ulrich Tietze -Christoph Schenk", description: "Cím: Analóg és digitális áramkörök, Év: 1981, Kiadó: Műszaki Könyvkiadó", catId: 10, image:"assets/img/termesszettudomany-villamosmernok/biliczsandor-amatematikavillamosmernokialkalmazasairolpeldakonkeresztul.jpg", price: 10, stock: 5, featured: false, active: true },
+        { id: 0, name: "Ulrich Tietze -Christoph Schenk", description: "Cím: Analóg és digitális áramkörök, Év: 1981, Kiadó: Műszaki Könyvkiadó", catId: 0, image: "assets/img/termeszettudomany-villamosmernok/ulrichtieztechristophschenk-analogesdigitalisaramkorok.jpg", price: 10, stock: 5, featured: false, active: true },
         { id: 1, name: "Bálint Ágnes", description: "Cím: Szeleburdi család, Év: 1968, Kiadó: Móra", catId:1 , image: "assets/img/gyerek/balintagnes-szeleburdicsalad.jpg", price: 10, stock: 5, featured: false, active: true },
         { id: 2, name: "Benedek Elek", description: "Cím: Összes meséi III-IV., Év: 2007, Kiadó: Szukits Kiadó", catId: 1, image: "assets/img/gyerek/benedekelek-osszesmesei.jpg", price: 10, stock: 5, featured: false, active: true },
         { id: 3, name: "Fekete István", description: "Cím: Vuk, Év: 2009, Kiadó: Móra", catId: 1, image: "assets/img/gyerek/fekete-istvan-vuk.jpg", price: 10, stock: 5, featured: false, active: true },
@@ -24,8 +24,8 @@ export class ProductService {
         { id: 15, name: "Veres Zoltán", description: "Cím: A marketing alapjai, Év: 2007, Kiadó: Perfekt Zrt.", catId: 3, image: "assets/img/kereskedelemmarketing/vereszoltan-amarketingalapjai.jpg", price: 10, stock: 5, featured: true, active: true },
         { id: 16, name: "Michael Cole- Sheila R.Cole", description: "Cím: Fejlődéslélektan, Év: 2006, Kiadó: Osiris Kiadó", catId: 4, image: "assets/img/pedagogiapszichologia/cole-cole-fejlodeslelektan.jpg", price: 10, stock: 5, featured: false, active: true },
         { id: 17, name: "Dr. Czeizel Endre", description: "Cím: Sors és tehetség, Év: 2004, Kiadó: Urbis Könyvkiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drczeizelendre-sorsestehetseg.jpg", price: 10, stock: 5, featured: true, active: true },
-        { id: 18, name: "Hidas György-Raffai Jenő-Vollner Judit", description: "Cím: Lelki köldökzsinór, Év: 2005, Kiadó: Helikon Kiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drhidasgyorgy-lelkikoldokzsinor.jpg", price: 10, stock: 5, featured: false, active: true },
-        { id: 19, name: "Dr.Tóth László", description: "Cím: Pszichológia a tanításban, Év: 2013, Kiadó: Pedellus Tankönyvkiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drhidasgyorgy-lelkikoldokzsinor.jpg", price: 10, stock: 5, featured: true, active: true },
+        { id: 18, name: "Hidas György-Raffai Jenő-Vollner Judit", description: "Cím: Lelki köldökzsinór, Év: 2005, Kiadó: Helikon Kiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drtothlaszlo-pszichologiaatanitasban.jpg", price: 10, stock: 5, featured: false, active: true },
+        { id: 19, name: "Dr.Tóth László", description: "Cím: Pszichológia a tanításban, Év: 2013, Kiadó: Pedellus Tankönyvkiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drtothlaszlo-.jpg", price: 10, stock: 5, featured: true, active: true },
         { id: 20, name: "Philip Zimbardo", description: "Cím: Pszichológia mindenkinek, Év: 2018, Kiadó: Libri Kiadó", catId: 4, image: "assets/img/pedagogiapszichologia/philipzimbardo-pszichológiamindenkinek (2).jpg", price: 10, stock: 5, featured: false, active: true },
         { id: 21, name: "Benke József", description: "Cím: Az orvostudomány története, Év: 2009, Kiadó: Medicina Könyvkiadó", catId: 5, image: "assets/img/orvostudomany/benkejozsef-azorvostudomanytortenete.jpg", price: 10, stock: 5, featured: false, active: true },
         { id: 22, name: "Vizi E. Szilveszter", description: "Cím: Orvostudomány , Év: 2001, Kiadó: Magyar Tudományos Akadémia", catId: 5, image: "assets/img/orvostudomany/vizieszilveszter-orvostudomany.jpg", price: 10, stock: 5, featured: false, active: true },
@@ -56,7 +56,7 @@ export class ProductService {
         { id: 47, name: "Bilicz Sándor", description: "Cím: A matematika villamosmérnöki alkalmazásairól példákon keresztül, Év: 2016, Kiadó: Typotex Kiadó", catId: 0, image: "assets/img/termeszettudomany-villamosmernok/biliczsandor-amatematikavillamosmernokialkalmazasairolpeldakonkeresztul.jpg", price: 10, stock: 5, featured: false, active: true },
         { id: 48, name: "dr.Csáki Frigyes-Bars Ruth", description: "Cím: Automatika, Év: 1969, Kiadó: Tankönyvkiadó", catId: 10, image: "assets/img/termeszettudomany-villamosmernok/drcsakifrigyesbarruth-automatika.jpg", price: 0, stock: 5, featured: false, active: true },
         { id: 49, name: "Simonyi Károly", description: "Cím: Villamosságtan, Év: 1964, Kiadó: Akadémiai Kiadó", catId: 10, image: "assets/img/termeszettudomany-villamosmernok/simonyikaroly-villamossagtan.jpg", price: 0, stock: 5, featured: false, active: true },
-        { id: 50, name: "Ulrich Tietze -Christoph Schenk", description: "Cím: Analóg és digitális áramkörök, Év: 1981, Kiadó: Műszaki Könyvkiadó", catId: 0, image: "assets/img/termeszettudomany-villamosmernok/ulrichtieztechristophschenk-analogesdigitalisaramkorok.jpg", price: 10, stock: 5, featured: false, active: true },
+
 
     ];
     /*
