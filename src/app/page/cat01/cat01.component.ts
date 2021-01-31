@@ -28,12 +28,12 @@ export class Cat01Component implements OnInit {
     catId: number = this.categories[0].id;
 
     /**
-     * @var filteredProducts {Product[]} -  A kategóriára leszürt könyvek listája
+     * @var featuredProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
      */
-    filteredProducts: Product[] = this.productService.list.filter(item => item.catId===this.catId);
+    featuredProducts: Product[] = [];
 
     /**
-     * @var featuredProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
+     * @var filteredProducts {Product[]} -  A kategóriára leszürt könyvek listája
      */
     featuredProducts: Product[] = this.filteredProducts.filter(item => item.featured)
                                                         .sort( () => 0.5 - Math.random())
@@ -51,12 +51,9 @@ export class Cat01Component implements OnInit {
         
         this.filteredProducts = this.products.filter(item => item.catId == currentCatId);
         
-        let onlyFeatured = this.products.filter(item => item.featured == true && item.catId == currentCatId);
-        this.featuredProducts = [];
-        for (let i = 0; i < 5; i++) {
-            const index = Math.floor(Math.random() * onlyFeatured.length);
-            this.featuredProducts.push(onlyFeatured[index]);
-        }
-        */
+
+        this.featuredProducts = this.filteredProducts.filter(product => product.featured && product.catId == currentCatId);
+        this.featuredProducts.sort(() => 0.5 - Math.random());
+        this.featuredProducts = this.featuredProducts.slice(0, 5);
     }
 }
