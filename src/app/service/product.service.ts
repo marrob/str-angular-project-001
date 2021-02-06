@@ -8,8 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
     
-    constructor(private http: HttpClient){}
+    constructor(){}
     
+    private http: HttpClient;
     jsonUrl:string = "http://localhost:3000/json/list";
 
     getAll():Observable<Product[]> {
@@ -60,8 +61,8 @@ export class ProductService {
         { id: 15, name: "Veres Zoltán", description: "Tudomány - Kereskedelem és marketing",title:"A marketing alapjai", releaseYear: 2007, publisher: "Perfekt Zrt.", catId: 3, image: "assets/img/kereskedelemmarketing/vereszoltan-amarketingalapjai.jpg", price: 1780, stock: 13, featured: true, active: true },
         { id: 16, name: "Michael Cole- Sheila R.Cole", description: "Tudomány - Pszichológia,pedagógia", title:"Fejlődéslélektan", releaseYear: 2006, publisher: "Osiris Kiadó", catId: 4, image: "assets/img/pedagogiapszichologia/cole-cole-fejlodeslelektan.jpg", price: 5790, stock: 43, featured: false, active: true },
         { id: 17, name: "Dr. Czeizel Endre", description: "Tudomány - Pszichológia,pedagógia",title:"Sors és tehetség", releaseYear: 2004, publisher: "Urbis Könyvkiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drczeizelendre-sorsestehetseg.jpg", price: 1990, stock: 1, featured: true, active: true },
-        { id: 18, name: "Hidas György-Raffai Jenő-Vollner Judit", description: "Tudomány - Pszichológia,pedagógia",title:"Lelki köldökzsinór", releaseYear: 2005, publisher:"Helikon Kiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drtothlaszlo-pszichologiaatanitasban.jpg", price: 2290, stock: 11, featured: false, active: true },
-        { id: 19, name: "Dr.Tóth László", description: "Tudomány - Pszichológia,pedagógia",title:"Pszichológia a tanításban", releaseYear: 2013, publisher:"Pedellus Tankönyvkiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drtothlaszlo-.jpg", price: 4500, stock: 1, featured: true, active: true },
+        { id: 18, name: "Hidas György-Raffai Jenő-Vollner Judit", description: "Tudomány - Pszichológia,pedagógia",title:"Lelki köldökzsinór", releaseYear: 2005, publisher:"Helikon Kiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drhidasgyorgy-lelkikoldokzsinor.jpg", price: 2290, stock: 11, featured: false, active: true },
+        { id: 19, name: "Dr.Tóth László", description: "Tudomány - Pszichológia,pedagógia", title:"Pszichológia a tanításban", releaseYear: 2013, publisher:"Pedellus Tankönyvkiadó", catId: 4, image: "assets/img/pedagogiapszichologia/drtothlaszlo--pszichologiaatanitasban.jpg.jpg", price: 4500, stock: 1, featured: true, active: true },
         { id: 20, name: "Philip Zimbardo", description: "Tudomány - Pszichológia,pedagógia", title:"Pszichológia mindenkinek", releaseYear: 2018, publisher:"Libri Kiadó", catId: 4, image: "assets/img/pedagogiapszichologia/philipzimbardo-pszichológiamindenkinek (2).jpg", price: 3550, stock: 9, featured: false, active: true },
         { id: 21, name: "Benke József", description: "Tudomány - Orvostudomány",title:"Az orvostudomány története", releaseYear: 2009, publisher: "Medicina Könyvkiadó", catId: 5, image: "assets/img/orvostudomany/benkejozsef-azorvostudomanytortenete.jpg", price: 3500, stock: 3, featured: false, active: true },
         { id: 22, name: "Vizi E. Szilveszter", description: "Tudomány - Orvostudomány",title:"Orvostudomány" , releaseYear: 2001, publisher:"Magyar Tudományos Akadémia", catId: 5, image: "assets/img/orvostudomany/vizieszilveszter-orvostudomany.jpg", price: 2550, stock: 4, featured: false, active: true },
