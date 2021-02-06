@@ -18,6 +18,7 @@ export class ConfigService {
     {text: 'Gyerek könyvek', link: '/cat01'},
     {text: 'Informatika', link: '/cat02'},
     {text: 'Pedagógia és pszichológia', link: '/cat03'},
+    {text: 'Admin', link: '/admin'},
   ];
 
   constructor() { }
