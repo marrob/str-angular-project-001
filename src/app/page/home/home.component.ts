@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from '../../model/product'
 import { ProductService } from '../../service/product.service';
 @Component({
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
     /**
      * @var products {Product[]} - Ezt meg kell adnodh hogy használni lehesssen
      */
-    products: Product[] = this.productService.list;
+    products$: Observable<Product[]> = this.productService.getAll();
 
     constructor(
         private productService: ProductService,
@@ -31,13 +32,14 @@ export class HomeComponent implements OnInit {
 
 
     ngOnInit(): void {
+        this.products$.subscribe(items => {
+            this.featuredProducts = items.filter(product => product.featured);
+            this.featuredProducts.sort(() => 0.5 - Math.random());
+            this.featuredProducts = this.featuredProducts.slice(0, 10);
 
-        this.featuredProducts = this.products.filter(product => product.featured);
-        this.featuredProducts.sort(() => 0.5 - Math.random());
-        this.featuredProducts = this.featuredProducts.slice(0, 5);
-
-        let mixedProducts:Product[] = [...this.products];
-        mixedProducts.sort(() => 0.5 - Math.random());
-        this.promotionProducts = mixedProducts.slice(0, 5);
+            let mixedProducts: Product[] = [...items];
+            mixedProducts.sort(() => 0.5 - Math.random());
+            this.promotionProducts = mixedProducts.slice(0, 10);
+        });
     }
 }

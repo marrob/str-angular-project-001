@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class ProductService {
-    constructor(){}
+    constructor(private http: HttpClient){}
 
-    private http: HttpClient;
+    
     jsonUrl:string = "http://localhost:3000/list";
 
     getAll():Observable<Product[]> {
