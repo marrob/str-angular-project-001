@@ -8,9 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
     constructor(){}
-    
+
     private http: HttpClient;
-    jsonUrl:string = "http://localhost:3000/json/list";
+    jsonUrl:string = "http://localhost:3000/list";
 
     getAll():Observable<Product[]> {
         return this.http.get<Product[]>(this.jsonUrl);
@@ -19,11 +19,11 @@ export class ProductService {
     getOne(id: string | number): Observable<Product>{
         return this.http.get<Product>( `${this.jsonUrl}/${id}` );
     }
-    
+
     create(product: Product): Observable<any> {
         return this.http.post<Product>(this.jsonUrl,product);
     }
-    
+
     update(product: Product): Observable<any>{
         return this.http.put( `${this.jsonUrl}/${product.id}`, product );
     }
