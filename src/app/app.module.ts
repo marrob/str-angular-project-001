@@ -14,6 +14,8 @@ import { ProductCardComponent } from './common/product-card/product-card.compone
 import { ProductPagerComponent } from './common/product-pager/product-pager.component';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin/admin.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { FormsModule } from '@angular/forms';
     Cat03Component,
     ProductPagerComponent,
     ProductCardComponent,
-    DataEditorComponent
+    DataEditorComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
