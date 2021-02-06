@@ -12,6 +12,7 @@ import { ProductListComponent } from './common/product-list/product-list.compone
 import { Cat03Component } from './page/cat03/cat03.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
 import { ProductPagerComponent } from './common/product-pager/product-pager.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductPagerComponent } from './common/product-pager/product-pager.comp
     ProductListComponent,
     Cat03Component,
     ProductPagerComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

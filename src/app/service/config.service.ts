@@ -18,6 +18,7 @@ export class ConfigService {
     {text: 'Szépirodalom', link: '/cat01'},
     {text: 'Tudomány', link: '/cat02'},
     {text: 'Egyéb', link: '/cat03'},
+    {text: 'Admin', link: '/admin'},
   ];
 
   constructor() { }
