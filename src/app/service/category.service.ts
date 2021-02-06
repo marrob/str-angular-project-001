@@ -10,7 +10,7 @@ export class CategoryService {
     list = [
         {
             id: 0,
-            name: "Irodalom",
+            name: "Szépirodalom",
             description: "könyv"
         },
         {

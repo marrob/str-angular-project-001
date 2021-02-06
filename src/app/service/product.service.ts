@@ -5,5 +5,5 @@ import { Product } from '../model/Product';
     providedIn: 'root'
 })
 export class ProductService {
-   
+
 }

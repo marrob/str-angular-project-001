@@ -3,6 +3,9 @@ interface IProduct {
     catId: number;
     name: string;
     description: string;
+    title: string;
+    publisher: string;
+    releaseYear: number;
     image: string;
     price: number;
     stock: number;
@@ -35,6 +38,9 @@ export class Product implements IProduct{
     catId: number;
     name: string;
     description: string;
+    title: string;
+    publisher: string;
+    releaseYear: number;
     image: string;
     price: number;
     stock: number;
