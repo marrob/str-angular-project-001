@@ -12,6 +12,7 @@ import { ProductListComponent } from './common/product-list/product-list.compone
 import { Cat03Component } from './page/cat03/cat03.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
 import { ProductPagerComponent } from './common/product-pager/product-pager.component';
+import { SorterPipe } from './pipe/sorter.pipe';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin/admin.component';
@@ -29,6 +30,7 @@ import { HttpClientModule} from '@angular/common/http';
     Cat03Component,
     ProductPagerComponent,
     ProductCardComponent,
+    SorterPipe,
     DataEditorComponent,
     AdminComponent
   ],

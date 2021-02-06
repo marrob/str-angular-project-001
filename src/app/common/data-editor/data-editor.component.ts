@@ -16,6 +16,11 @@ export class DataEditorComponent implements OnInit {
 
   cols: IBookCol[] = this.config.bookMenuCols;
 
+  phrase: string = '';
+  key: string = 'name';
+  order: string = '';
+
+
   constructor(
     private config: ConfigService,
     private productService: ProductService
@@ -31,4 +36,16 @@ export class DataEditorComponent implements OnInit {
   onDelete(product: Product): void {
     this.productService.remove(product);
   }
+
+  onChangePhrase(event: Event):void {
+    this.phrase = (event.target as HTMLInputElement).value;
+  }
+  onChangeKey(event: Event):void {
+    this.key = (event.target as HTMLInputElement).value;
+    this.phrase = '';
+  }
+  onChangeOrder(event: Event):void {
+    this.order = (event.target as HTMLInputElement).value;
+  }
+
 }

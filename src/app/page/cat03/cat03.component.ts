@@ -44,8 +44,8 @@ export class Cat03Component implements OnInit {
         this.products$.subscribe(items => {
             this.filteredProducts = items.filter(item => item.catId == currentCatId);
             this.featuredProducts = this.filteredProducts.filter(product => product.featured)
-                .sort(() => 0.5 - Math.random())
-                .slice(0, 5);
+                .sort(() => 0.5 - Math.random());
+                //.slice(0, 5);
 
         });
     }
