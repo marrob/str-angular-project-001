@@ -27,13 +27,13 @@ export class ProductService {
     update(product: Product): Observable<any>{
         return this.http.put( `${this.jsonUrl}/${product.id}`, product );
     }
-    remove(product: Partial<Product> | string | number): Observable<any>{
+    remove(product: Product): Observable<any>{
         try{
-            const id =
-                typeof product === 'string' ? product :
-                typeof product === 'number' ? product :
-                product.id;
-                return this.http.delete( `${this.jsonUrl}/${id}` );
+            // const id =
+            //     typeof product === 'string' ? product :
+            //     typeof product === 'number' ? product :
+            //     product.id;
+                return this.http.delete( `${this.jsonUrl}/${product.id}` );
         }
         catch(err){
             console.log(`Error when removing product ${product}:
