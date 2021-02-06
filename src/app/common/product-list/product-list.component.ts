@@ -9,6 +9,7 @@ import { Product } from 'src/app/model/product';
 export class ProductListComponent implements OnInit {
   phrase: string = '';
   key: string = '';
+  order: string = '';
 
   @Input() products: Product[] = [];
   //test_products: any[] = Array.from(Array(50).keys()).map((item,idx) => ({name: String(idx+1)}));
@@ -24,6 +25,9 @@ export class ProductListComponent implements OnInit {
   onChangeKey(event: Event):void {
     this.key = (event.target as HTMLInputElement).value;
     this.phrase = '';
+  }
+  onChangeOrder(event: Event):void {
+    this.order = (event.target as HTMLInputElement).value;
   }
 
 }
