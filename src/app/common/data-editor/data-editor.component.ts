@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ConfigService, IBookCol } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
@@ -11,7 +12,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class DataEditorComponent implements OnInit {
 
-  @Input() products: Product[] = [];
+  products$ : Observable<Product[]> = this.productService.getAll();
 
   cols: IBookCol[] = this.config.bookMenuCols;
 
@@ -24,10 +25,10 @@ export class DataEditorComponent implements OnInit {
   }
 
   onUpdate(product: Product): void {
-  //  this.productService.update(product);
+    this.productService.update(product);
   }
 
   onDelete(product: Product): void {
-  //  this.productService.remove(product);
+    this.productService.remove(product);
   }
 }
