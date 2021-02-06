@@ -12,6 +12,8 @@ import { ProductListComponent } from './common/product-list/product-list.compone
 import { Cat03Component } from './page/cat03/cat03.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
 import { ProductPagerComponent } from './common/product-pager/product-pager.component';
+import { DataEditorComponent } from './common/data-editor/data-editor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { ProductPagerComponent } from './common/product-pager/product-pager.comp
     ProductListComponent,
     Cat03Component,
     ProductPagerComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    DataEditorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
