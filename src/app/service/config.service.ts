@@ -41,7 +41,7 @@ export class ConfigService {
   ];
 
   newBookCols: IBookCol[] = [
-    {key: 'catId', text: "Kategória", type: 'text'},
+    {key: 'catId', text: "Kategória", type: 'select'},
     {key: 'name', text:'Szerző', type: 'text'},
     {key: 'title', text:'Cím', type: 'text'},
     {key: 'publisher', text:'Kiadó', type: 'text'},

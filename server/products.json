@@ -701,18 +701,6 @@
       "active": true
     },
     {
-      "name": "Proba",
-      "id": 50
-    },
-    {
-      "name": "Proba",
-      "id": 51
-    },
-    {
-      "name": "Proba",
-      "id": 52
-    },
-    {
       "catId": "0",
       "name": "Karl May",
       "title": "Winnetou",
@@ -723,6 +711,16 @@
       "featured": "",
       "active": "",
       "id": 53
+    },
+    {
+      "catId": "1",
+      "name": "Herpy",
+      "title": "Aktív RC szűrők",
+      "publisher": "Kossuth",
+      "releaseYear": "1980",
+      "price": "3000",
+      "featured": "",
+      "id": 54
     }
   ]
 }

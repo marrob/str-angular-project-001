@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12">
         <div><p class="h3">Új könyv adatainak megadása</p></div>
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th class="text-center" *ngFor="let col of cols">{{ col.text }} </th>
@@ -11,6 +11,11 @@
             <tbody>
                 <tr>
                     <td *ngFor="let col of cols">
+                        <select *ngIf="col.type=='select'" [(ngModel)]="product[col.key]" class="form-control">
+                            <option value="0">Szépirodalom</option>
+                            <option value="1">Tudomány</option>
+                            <option value="2">Egyéb</option>
+                        </select>
                         <input *ngIf="col.type=='text'" [(ngModel)]="product[col.key]" [type]="col.type" class="form-control">
                         <input *ngIf="col.type=='checkbox'" [(ngModel)]="product[col.key]" [type]="col.type" class="form-control">
                     </td>
