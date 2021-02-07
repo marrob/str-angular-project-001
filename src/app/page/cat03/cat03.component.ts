@@ -1,51 +1,52 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../model/product';
-import { ProductService} from '../../service/product.service';
-import { CategoryService} from '../../service/category.service';
+import { ProductService } from '../../service/product.service';
+import { CategoryService } from '../../service/category.service';
 import { Category } from 'src/app/model/category';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-cat03',
-  templateUrl: './cat03.component.html',
-  styleUrls: ['./cat03.component.scss']
+    selector: 'app-cat03',
+    templateUrl: './cat03.component.html',
+    styleUrls: ['./cat03.component.scss']
 })
 export class Cat03Component implements OnInit {
 
-  constructor(
-    private productService: ProductService,
-    private categoryService:CategoryService,
- ) { }
+    constructor(
+        private productService: ProductService,
+        private categoryService: CategoryService,
+    ) { }
 
-products: Product[] = this.productService.list;
-categories: Category[] = this.categoryService.list;
+    products$: Observable<Product[]> = this.productService.getAll();
+    categories: Category[] = this.categoryService.list;
 
-/**
- * @var catName {Product[]} -  Ezt Hogyan tudom megszerezni? 
- */
-catName: string = this.categories[2].name;
+    /**
+     * @var catName {Product[]} -  Ezt Hogyan tudom megszerezni?
+     */
+    catName: string = this.categories[2].name;
 
-/**
- * @var featuredProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
- */
-featuredProducts: Product[] = [];
-
-
-/**
- * @var filteredProducts {Product[]} -  A kategóriára leszürt könyvek listája
- */
-filteredProducts: Product[] = [];
+    /**
+     * @var featuredProducts {Product[]} -  5db termék - kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyek featured tulajdonsága true.
+     */
+    featuredProducts: Product[] = [];
 
 
-name:string = "";
+    /**
+     * @var filteredProducts {Product[]} -  A kategóriára leszürt könyvek listája
+     */
+    filteredProducts: Product[] = [];
 
-ngOnInit(): void {
-    let currentCatId = this.categories[2].id;
-    
-    this.filteredProducts = this.products.filter(item => item.catId == currentCatId);
-    
 
-    this.featuredProducts = this.filteredProducts.filter(product => product.featured)
-                                                .sort(() => 0.5 - Math.random())
-                                                .slice(0, 5);
-}
+    name: string = "";
+
+    ngOnInit(): void {
+        let currentCatId = this.categories[2].id;
+        this.products$.subscribe(items => {
+            this.filteredProducts = items.filter(item => item.catId == currentCatId);
+            this.featuredProducts = this.filteredProducts.filter(product => product.featured)
+                .sort(() => 0.5 - Math.random());
+                //.slice(0, 5);
+
+        });
+    }
 }

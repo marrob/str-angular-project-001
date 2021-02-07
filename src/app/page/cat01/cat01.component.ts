@@ -3,6 +3,7 @@ import { Product } from '../../model/product';
 import { ProductService} from '../../service/product.service';
 import { CategoryService} from '../../service/category.service';
 import { Category } from 'src/app/model/category';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-cat01',
@@ -16,7 +17,7 @@ export class Cat01Component implements OnInit {
         private categoryService:CategoryService,
      ) { }
     
-    products: Product[] = this.productService.list;
+    products$: Observable<Product[]> = this.productService.getAll();
     categories: Category[] = this.categoryService.list;
 
     /**
@@ -40,12 +41,12 @@ export class Cat01Component implements OnInit {
 
     ngOnInit(): void {
         let currentCatId = this.categories[0].id;
-        
-        this.filteredProducts = this.products.filter(item => item.catId == currentCatId);
-        
-
+        this.products$.subscribe(items=>{
+        this.filteredProducts = items.filter(item => item.catId == currentCatId);
         this.featuredProducts = this.filteredProducts.filter(product => product.featured)
-                                                    .sort(() => 0.5 - Math.random())
-                                                    .slice(0, 5);
+                                                    .sort(() => 0.5 - Math.random());
+                                                    //.slice(0, 5);
+
+        });
     }
 }

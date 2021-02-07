@@ -1,8 +1,10 @@
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
 
-        <div class="col-sm-12 col-md-6 col-lg-2 my-2 px-1 d-flex justify-content-center" *ngFor="let product of products">
+        <button (click)="onLeftClick()" [disabled] ="disabledLeftClick" class="btn btn-primary" ><i class="fa fa-arrow-left"></i></button>
+        <div class="col-sm-12 col-md-6 col-lg-2 my-2 px-1" *ngFor="let product of onlyFiveProducts">
             <app-product-card [product]="product"></app-product-card>
         </div>
+        <button (click)="onRightClick()" [disabled] ="disabledRightClick" class="btn btn-primary"><i class="fa fa-arrow-right"></i></button>
     </div>
 </div>
