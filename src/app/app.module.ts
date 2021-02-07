@@ -18,6 +18,7 @@ import { DataEditorComponent } from './common/data-editor/data-editor.component'
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './page/admin/admin.component';
 import { HttpClientModule} from '@angular/common/http';
+import { NewProductComponent } from './common/new-product/new-product.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule} from '@angular/common/http';
     FooterComponent,
     SorterPipe,
     DataEditorComponent,
-    AdminComponent
+    AdminComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
