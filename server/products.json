@@ -11,7 +11,7 @@
       "image": "assets/img/termeszettudomany-villamosmernok/ulrichtieztechristophschenk-analogesdigitalisaramkorok.jpg",
       "price": 2500,
       "stock": 15,
-      "featured": "true",
+      "featured": false,
       "active": true
     },
     {
