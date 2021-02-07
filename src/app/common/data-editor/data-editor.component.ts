@@ -30,11 +30,11 @@ export class DataEditorComponent implements OnInit {
   }
 
   onUpdate(product: Product): void {
-    this.productService.update(product);
+    this.productService.update(product).subscribe(item=>console.log("onUpdate",item));
   }
 
   onDelete(product: Product): void {
-    this.productService.remove(product);
+    this.productService.remove(product).subscribe(item=>console.log("onDelete",item));
   }
 
   onChangePhrase(event: Event):void {
