@@ -1,3 +1,27 @@
-<div>
-    <button class="btn btn-success" (click) = "createNewProduct()">Új termék</button>
+<div class="row">
+    <div class="col-12">
+        <div><p class="h3">Új könyv adatainak megadása</p></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center" *ngFor="let col of cols">{{ col.text }} </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td *ngFor="let col of cols">
+                        <input *ngIf="col.type=='text'" [(ngModel)]="product[col.key]" [type]="col.type" class="form-control">
+                        <input *ngIf="col.type=='checkbox'" [(ngModel)]="product[col.key]" [type]="col.type" class="form-control">
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-success" (click)="createNewProduct()"><i
+                                    class="fa fa-plus"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

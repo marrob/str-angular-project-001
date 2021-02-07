@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product';
+import { ConfigService, IBookCol } from 'src/app/service/config.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -10,24 +11,23 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class NewProductComponent implements OnInit {
 
-    products$: Observable<Product[]> = this.prodService.getAll();
+    product:Product = new Product();
 
-    newProduct:Product = new Product();
+    cols: IBookCol[] = this.config.newBookCols;
 
-
-
-    constructor(private prodService: ProductService) { }
+    constructor(
+        private config: ConfigService,
+        private prodService: ProductService
+    ) { }
 
     ngOnInit(): void {
-        this.newProduct.name ="Proba";
+        
     }
 
     createNewProduct() {
-
-        this.prodService.create(this.newProduct).subscribe(item=>{
+        this.prodService.create(this.product).subscribe(item=>{
             console.log("newProduct", item);
         });
-
     }
 
 }

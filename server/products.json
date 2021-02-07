@@ -711,6 +711,18 @@
     {
       "name": "Proba",
       "id": 52
+    },
+    {
+      "catId": "0",
+      "name": "Karl May",
+      "title": "Winnetou",
+      "publisher": "Osiris",
+      "releaseYear": "1970",
+      "price": "1000",
+      "stock": "1",
+      "featured": "",
+      "active": "",
+      "id": 53
     }
   ]
 }

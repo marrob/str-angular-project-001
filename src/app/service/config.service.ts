@@ -40,5 +40,18 @@ export class ConfigService {
     {key: 'active', text:'Aktív', type: 'checkbox'},
   ];
 
+  newBookCols: IBookCol[] = [
+    {key: 'catId', text: "Kategória", type: 'text'},
+    {key: 'name', text:'Szerző', type: 'text'},
+    {key: 'title', text:'Cím', type: 'text'},
+    {key: 'publisher', text:'Kiadó', type: 'text'},
+    {key: 'releaseYear', text:'Év', type: 'text'},
+    {key: 'price', text:'Ár', type: 'text'},
+    {key: 'description', text:'Leírás', type: 'text'},
+    {key: 'stock', text:'Raktáron', type: 'text'},
+    {key: 'featured', text:'Kiemelt', type: 'checkbox'},
+    {key: 'active', text:'Aktív', type: 'checkbox'},
+  ];
+
   constructor() { }
 }
