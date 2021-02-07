@@ -1,26 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="search col-4 d-flex align-items-center mx-3 mb-1">
-            <label for="search">Szűrés: </label>
-            <select name="" id="key" class="form-control mr-sm-2" (change)="onChangeKey($event)">
-                <option value="name">szerző</option>
-                <option value="title">cím</option>
-                <option value="description">leírás</option>
-                <option value="price">ár</option>
-                <option value="publisher">kiadó</option>
-                <option value="releaseYear">kiadás</option>
-            </select>
-            <input id="search" (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search" [value]="phrase">
-            <label for="search">Rendezés: </label>
-            <select name="" id="order" class="form-control mr-sm-2" (change)="onChangeOrder($event)">
-                <option value="id">nincs</option>
-                <option value="name">szerző</option>
-                <option value="title">cím</option>
-                <option value="description">leírás</option>
-                <option value="price">ár</option>
-                <option value="publisher">kiadó</option>
-                <option value="releaseYear">kiadás</option>
-            </select>
+<div class="container-fluid">
+  <div class="row d-flex justify-content-end">
+        <form class="form-inline m-2">
+            <div class="form-group">
+                <div class="form-group row">
+                    <label for="search" class="align-middle mx-3 ">Szűrés: </label>
+                    <select name="" id="key" class="form-control mr-sm-2" (change)="onChangeKey($event)">
+                        <option value="name">szerző</option>
+                        <option value="title">cím</option>
+                        <option value="description">leírás</option>
+                        <option value="price">ár</option>
+                        <option value="publisher">kiadó</option>
+                        <option value="releaseYear">kiadás</option>
+                    </select>
+            
+                    <input id="search" (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search" [value]="phrase">
+                    
+                    <label for="search">Rendezés: </label>
+                    <select name="" id="order" class="form-control mr-sm-2" (change)="onChangeOrder($event)">
+                        <option value="id">nincs</option>
+                        <option value="name">szerző</option>
+                        <option value="title">cím</option>
+                        <option value="description">leírás</option>
+                        <option value="price">ár</option>
+                        <option value="publisher">kiadó</option>
+                        <option value="releaseYear">kiadás</option>
+                    </select>
+                </div>
+            </div>
+        </form>
     </div>
   <div class="row">
     <div class="col-12">
