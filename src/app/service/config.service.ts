@@ -9,7 +9,7 @@ export interface IMenuItem {
 export interface IBookCol {
   key: string;
   text: string;
-  editable?: boolean;
+  type: string;
 }
 
 @Injectable({
@@ -28,16 +28,16 @@ export class ConfigService {
   ];
 
   bookMenuCols: IBookCol[] = [
-    {key: 'id', text: "#", editable: false},
-    {key: 'name', text:'Szerző', editable: true},
-    {key: 'title', text:'Cím', editable: true},
-    {key: 'publisher', text:'Kiadó', editable: true},
-    {key: 'releaseYear', text:'Év', editable: true},
-    {key: 'price', text:'Ár', editable: true},
-    {key: 'description', text:'Leírás', editable: true},
-    {key: 'stock', text:'Raktáron', editable: true},
-    {key: 'featured', text:'Kiemelt', editable: true},
-    {key: 'active', text:'Aktív', editable: true},
+    {key: 'id', text: "#", type: 'readonly'},
+    {key: 'name', text:'Szerző', type: 'text'},
+    {key: 'title', text:'Cím', type: 'text'},
+    {key: 'publisher', text:'Kiadó', type: 'text'},
+    {key: 'releaseYear', text:'Év', type: 'text'},
+    {key: 'price', text:'Ár', type: 'text'},
+    {key: 'description', text:'Leírás', type: 'text'},
+    {key: 'stock', text:'Raktáron', type: 'text'},
+    {key: 'featured', text:'Kiemelt', type: 'checkbox'},
+    {key: 'active', text:'Aktív', type: 'checkbox'},
   ];
 
   constructor() { }
