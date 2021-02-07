@@ -17,7 +17,7 @@ export interface IBookCol {
 })
 export class ConfigService {
 
-  appName: string = 'A Könyves webshop ';
+  appName: string = 'OlvasNode kell!';
 
   menuItems: IMenuItem[] = [
     {text: 'Főoldal', link: '/', icon: 'home'},

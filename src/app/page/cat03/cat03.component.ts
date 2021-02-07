@@ -21,7 +21,7 @@ export class Cat03Component implements OnInit {
     categories: Category[] = this.categoryService.list;
 
     /**
-     * @var catName {Product[]} -  Ezt Hogyan tudom megszerezni? 
+     * @var catName {Product[]} -  Ezt Hogyan tudom megszerezni?
      */
     catName: string = this.categories[2].name;
 
@@ -40,7 +40,7 @@ export class Cat03Component implements OnInit {
     name: string = "";
 
     ngOnInit(): void {
-        let currentCatId = this.categories[0].id;
+        let currentCatId = this.categories[2].id;
         this.products$.subscribe(items => {
             this.filteredProducts = items.filter(item => item.catId == currentCatId);
             this.featuredProducts = this.filteredProducts.filter(product => product.featured)
