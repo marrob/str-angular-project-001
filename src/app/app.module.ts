@@ -15,7 +15,7 @@ import { ProductPagerComponent } from './common/product-pager/product-pager.comp
 import { SorterPipe } from './pipe/sorter.pipe';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
 import { FormsModule } from '@angular/forms';
-import { AdminComponent } from './admin/admin/admin.component';
+import { AdminComponent } from './page/admin/admin.component';
 import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
