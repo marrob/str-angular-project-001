@@ -33,7 +33,8 @@ export class ProductService {
             //     typeof product === 'string' ? product :
             //     typeof product === 'number' ? product :
             //     product.id;
-                return this.http.delete( `${this.jsonUrl}/${product.id}` );
+            let url:string = `${this.jsonUrl}/${product.id}`
+                return this.http.delete<Product>( url );
         }
         catch(err){
             console.log(`Error when removing product ${product}:

@@ -16,7 +16,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { SorterPipe } from './pipe/sorter.pipe';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
 import { FormsModule } from '@angular/forms';
-import { AdminComponent } from './admin/admin/admin.component';
+import { AdminComponent } from './page/admin/admin.component';
 import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -31,7 +31,7 @@ import { HttpClientModule} from '@angular/common/http';
     Cat03Component,
     ProductPagerComponent,
     ProductCardComponent,
-    FooterComponent
+    FooterComponent,
     SorterPipe,
     DataEditorComponent,
     AdminComponent
