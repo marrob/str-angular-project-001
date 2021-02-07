@@ -31,7 +31,7 @@ import { HttpClientModule} from '@angular/common/http';
     Cat03Component,
     ProductPagerComponent,
     ProductCardComponent,
-    FooterComponent
+    FooterComponent,
     SorterPipe,
     DataEditorComponent,
     AdminComponent
