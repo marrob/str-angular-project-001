@@ -1,9 +1,10 @@
-<div class="card h-100 d-inline-block d-flex justify-content-center"  >
+<div class="card h-100 d-inline-block d-flex border-4 border-danger justify-content-center shadow bg-white rounded"  >
     <img [src] ="product.image" class="card-img-top" alt="...">
-    <div class="card-body ">
-        <h5 class="card-title"> {{product.name}} </h5>
-        <p class="card-text"> {{product.description}} </p>
-        <p class="card-text"> Ár: {{product.price}} Ft</p>
-        <p class="card-text"> Elérhető: {{product.stock}} példány</p>
+    <div class="card-body d-flex flex-column ">
+        <h6 class="card-title"> {{product.name}} </h6>
+        <h5 class="card-title"> {{product.title}} </h5>
+        <p class="card-text"> Ár: <b>{{product.price}}</b> Ft</p>
+        <p class="card-text"> Elérhető: <b>{{product.stock}}</b> példány</p>
+        <p class="card-text mt-auto"> {{product.description}} </p>
     </div>
 </div>
