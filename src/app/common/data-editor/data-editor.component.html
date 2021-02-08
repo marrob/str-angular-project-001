@@ -44,7 +44,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th class="text-center" *ngFor="let col of cols">{{ col.text }} </th>
+            <th (click) = "onHeaderClick($event)" class="text-center" *ngFor="let col of cols">{{ col.text }} </th>
             <th></th>
           </tr>
         </thead>
