@@ -1,7 +1,7 @@
 {
   "list": [
     {
-      "id": 0,
+      "id": 50,
       "name": "Ulrich Tietze -Christoph Schenk",
       "description": "Tudomány - Villamosmérnököknek",
       "title": "Analóg és digitális áramkörök",
@@ -60,7 +60,7 @@
       "id": 4,
       "name": "Lázár Ervin",
       "description": "Irodalom - Gyermekkönyv",
-      "title": " A kisfiú meg az oroszlánok",
+      "title": "A kisfiú meg az oroszlánok",
       "publisher": "Osiris Kiadó",
       "releaseYear": 1999,
       "catId": 0,
@@ -706,7 +706,7 @@
       "title": "Winnetou",
       "publisher": "Osiris",
       "releaseYear": "1970",
-      "price": "1000",
+      "price": 1000,
       "stock": "1",
       "featured": "",
       "active": "",
@@ -718,7 +718,7 @@
       "title": "Aktív RC szűrők",
       "publisher": "Kossuth",
       "releaseYear": "1980",
-      "price": "3000",
+      "price": 3000,
       "featured": "",
       "id": 54
     }
