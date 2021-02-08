@@ -6,11 +6,12 @@ import { ProductService } from 'src/app/service/product.service';
 
 
 @Component({
-  selector: 'app-data-editor',
-  templateUrl: './data-editor.component.html',
-  styleUrls: ['./data-editor.component.scss']
+    selector: 'app-data-editor',
+    templateUrl: './data-editor.component.html',
+    styleUrls: ['./data-editor.component.scss']
 })
 export class DataEditorComponent implements OnInit {
+
 
   products$ : Observable<Product[]> = this.productService.getAll();
 
