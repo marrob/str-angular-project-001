@@ -10,46 +10,67 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12 d-flex justify-content-end">
+    <div class="col-12 d-flex justify-content-between">
       <form class="form-inline m-2">
           <div class="form-group">
               <div class="form-group row">
-                  <label for="search" class="mx-2">Szűrés: </label>
-                  <select name="" id="key" class="form-control mr-sm-2" (change)="onChangeKey($event)">
-                      <option value="name">szerző</option>
-                      <option value="title">cím</option>
-                      <option value="description">leírás</option>
-                      <option value="price">ár</option>
-                      <option value="publisher">kiadó</option>
-                      <option value="releaseYear">kiadás</option>
+                <label for="search" class="mx-2">Oldalméret: </label>
+                <select name="" id="page" class="form-control" [value]="pageSize" (change)="onChangePageSize($event)">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+                <label for="search" class="mx-2">Lapozás: </label>
+                  <a class="page-link" (click)="onNextPage(-1)">&laquo;</a>
+                  <select name="" id="page" class="form-control" [value]="page" (change)="onChangePage($event)">
+                      <option *ngFor="let i of pages" [value]="i">{{ i }}</option>
                   </select>
-                  <input id="search" (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search" [value]="phrase">
-                  <label for="search" class="mr-2">Rendezés: </label>
-                  <select name="" id="order" class="form-control mr-sm-2" (change)="onChangeOrder($event)">
-                      <option value="id">nincs</option>
-                      <option value="name">szerző</option>
-                      <option value="title">cím</option>
-                      <option value="description">leírás</option>
-                      <option value="price">ár</option>
-                      <option value="publisher">kiadó</option>
-                      <option value="releaseYear">kiadás</option>
-                  </select>
+                  <a class="page-link" (click)="onNextPage(1)">&raquo;</a>
               </div>
           </div>
       </form>
-    </div>
+      <form class="form-inline m-2">
+        <div class="form-group">
+            <div class="form-group row">
+                <label for="search" class="mx-2">Szűrés: </label>
+                <select name="" id="key" class="form-control mr-sm-2" (change)="onChangeKey($event)">
+                    <option value="name">szerző</option>
+                    <option value="title">cím</option>
+                    <option value="description">leírás</option>
+                    <option value="price">ár</option>
+                    <option value="publisher">kiadó</option>
+                    <option value="releaseYear">kiadás</option>
+                </select>
+                <input id="search" (keyup)="onChangePhrase($event)" class="form-control mr-sm-2" type="text" placeholder="Search" [value]="phrase">
+                <label for="search" class="mr-2">Rendezés: </label>
+                <select name="" id="order" class="form-control mr-sm-2" [value]="order" (change)="onChangeOrder($event)">
+                    <option value="id">id</option>
+                    <option value="name">szerző</option>
+                    <option value="title">cím</option>
+                    <option value="description">leírás</option>
+                    <option value="price">ár</option>
+                    <option value="publisher">kiadó</option>
+                    <option value="releaseYear">kiadás</option>
+                </select>
+            </div>
+        </div>
+    </form>
+  </div>
   </div>
   <div class="row">
     <div class="col-12">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th (click) = "onHeaderClick($event)" class="text-center" *ngFor="let col of cols">{{ col.text }} </th>
+            <th class="text-center" *ngFor="let col of cols" (click)="onChangeHeader(col.key)">{{ col.text }}</th>
+
+
+
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products$ | async | filter:phrase:key | sorter:order">
+          <tr *ngFor="let product of products$ | async | filter:phrase:key | sorter:order | slice:((page-1)*pageSize):(page*pageSize)">
             <td *ngFor="let col of cols">
               <input *ngIf="col.type=='text'" [(ngModel)]="product[col.key]" [type]="col.type" class="form-control">
               <input *ngIf="col.type=='checkbox'" [checked]="product[col.key]" (change)="product[col.key] = !product[col.key]" [type]="col.type" class="form-control">
