@@ -26,6 +26,8 @@ export class DataEditorComponent implements OnInit {
   pages: number[] = [];
   page: number = 1;
 
+  sortDirection:string = 'up';
+
   constructor(
     private config: ConfigService,
     private productService: ProductService
@@ -81,6 +83,16 @@ export class DataEditorComponent implements OnInit {
     } else if(this.pages.length<this.page){
       this.page = this.pages.length;
     }
+  }
+
+  onSortUpClick(key:string, dir:string):void{
+    this.order = key;
+    this.sortDirection = dir;
+  }
+  onSortDownClick(key:string, dir:string):void{
+    this.order = key;
+    this.sortDirection = dir;
+    console.log('onSortDownClick key',key, 'dir', dir);
   }
 
 }
