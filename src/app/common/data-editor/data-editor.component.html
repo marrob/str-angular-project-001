@@ -62,15 +62,21 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th class="text-center" *ngFor="let col of cols" (click)="onChangeHeader(col.key)">{{ col.text }}</th>
-
-
-
-            <th></th>
+            <th class="text-center" *ngFor="let col of cols" >
+                <button class="text-center btn" >{{ col.text }}</button>
+                <div class="row ">
+                    <div class="col-12">
+                        <div class="btn-group">
+                            <button class="text-center btn btn-primary col-6" (click)="onSortUpClick(col.key, 'up')"><i class="fa fa-arrow-circle-up"></i></button>
+                            <button class="text-center btn btn-primary col-6" (click)="onSortDownClick(col.key,'down')"><i class="fa fa-arrow-circle-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products$ | async | filter:phrase:key | sorter:order | slice:((page-1)*pageSize):(page*pageSize)">
+          <tr *ngFor="let product of products$ | async | filter:phrase:key | sorter:order:sortDirection | slice:((page-1)*pageSize):(page*pageSize)">
             <td *ngFor="let col of cols">
               <input *ngIf="col.type=='text'" [(ngModel)]="product[col.key]" [type]="col.type" class="form-control">
               <input *ngIf="col.type=='checkbox'" [checked]="product[col.key]" (change)="product[col.key] = !product[col.key]" [type]="col.type" class="form-control">
